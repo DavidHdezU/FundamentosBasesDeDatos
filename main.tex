@@ -1,0 +1,212 @@
+\documentclass{article}
+
+% Símbolos
+\usepackage{recycle}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+\restylefloat{table}
+
+% Figuras
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+% Colores
+\usepackage{xcolor}
+
+% Márgenes
+\addtolength{\voffset}{-1cm}
+\addtolength{\hoffset}{-1.5cm}
+\addtolength{\textwidth}{3cm}
+\addtolength{\textheight}{2cm}
+
+% Encabezados y Pies de Página
+\usepackage{fancyhdr}
+% Información del Encabezado
+\lhead{Fundamentos de Bases de Datos 2022-2 \\
+       Tarea 1}
+     \rhead{Profesor: Gerardo Avil\'s Rosas \\
+       Ayudantes: Roc\'io Aylin Huerta Gonz\'alez\\
+  Rodrigo Alejandro S\'anchez Morales}
+\pagenumbering{gobble}
+% Estilo
+\pagestyle{fancyplain}
+
+\begin{document}
+
+\begin{enumerate}
+\item Conceptos generales:
+\begin{itemize}
+    \item[a.]¿Qu\'e ventajas y desventajas encuentras al trabajar con una base de datos?
+\end{itemize}
+
+  \color{darkgray}
+\begin{table}[H]
+    \centering
+        \begin{tabular}{|p{6cm} | p{6cm} |}        
+        \hline
+        \textbf{Ventajas} & \textbf{Desventajas} \\
+        \hline
+        Redundancia de datos reducida. & El enfoque de datos es costoso debido a los mayores requisitos de Hardware y Software. \\
+        \hline
+        Mayor integridad de datos e independencia de los programas de aplicaciones. & Los sistemas de bases de datos son complejos (debido a la independencia de los datos), difíciles y lentos de diseñar. \\ 
+        \hline 
+        Costos reducidos de entrada, almacenamiento y recuperación de datos. & Los daños a la base de datos afectan prácticamente a todos los programas de aplicaciones. \\
+        \hline
+        Reducción de errores de actualización y mayor consistencia. & Altos costos de conversión al pasar de un sistema basado en archivos a un sistema de base de datos. \\
+        \hline
+        Mejora de la seguridad de los datos. & Capacitación necesaria para todos los usuarios.\\
+        \hline
+        \end{tabular}
+\end{table}
+\begin{itemize}
+    \item[b.]¿Qué es la independencia de datos? ¿Cuál tipo de independencia de datos es más difícil de lograr? Justifica tu respuesta.
+\end{itemize}
+    Es la capacidad de modificar el esquema sin afectar los programas y la aplicación a reescribir. Los datos están separados de los programas, por lo que los cambios realizados en los datos no afectarán la ejecución del programa y la aplicación, por lo cual decimos que los niveles superiores no se ven afectados por los cambios en los niveles inferiores.
+    
+    Independencia de datos lógicos significa cambiar el esquema conceptual sin cambiar la API externa, los programas o las vistas externas. Mientras que la independencia de datos físicos es cuando el esquema de software se cambia sin necesidad de actualizar los programas de software para su modificación.
+    Debido a lo expuesto anteriormente concluimos que es mucho más difícil lograr la independencia de los datos lógicos en comparación con la independencia de los datos físicos.
+    
+    \begin{itemize}
+    \item[c.]Explica la diferencia entre los esquemas externo, interno y conceptual. ¿Cómo se relacionan estas diferentes capas de esquemas con los conceptos de independencia de datos lógica y física?
+    \end{itemize}
+    Externo:
+    \begin{itemize}
+        \item Permiten personalizar (y autorizar) el acceso a los datos a nivel de usuarios individuales o grupos de usuarios.
+        \item Proporcionan independencia de datos lógicos.
+    \end{itemize}
+    Interno: 
+    \begin{itemize}
+        \item Visto únicamente por el administrador.
+        \item Describe cómo se almacenarán físicamente los datos y cómo se accederá a ellos.
+        \item Permite que los datos almacenados en la base de datos se puedan recuperar mediante una sola operación.
+    \end{itemize}
+    Conceptual:
+    \begin{itemize}
+        \item Este es visto por el arquitecto y el administrador.
+        \item Describe los datos almacenados en el modelo de datos.
+        \item Define toda la base de datos sin hacer referencia a cómo se almacenan los datos en la memoria secundaria de la computadora.
+    \end{itemize}
+	Estos 3 niveles se relacionan ya que en el esquema conceptual se describen todas las relaciones que se almacenan en la base de datos, cualquier base de datos tienen exactamente un esquema conceptual y uno interno porque solo tiene un conjunto de relaciones almacenadas, pero puede tener varios esquemas externos cada uno adaptado a un grupo particular de usuarios.
+Los esquemas externos proporcionan independencia de datos lógicos, mientras que los esquemas conceptuales ofrecen independencia de datos físicos.
+
+\begin{itemize}
+    \item[d.]Investiga qué papel juegan los analistas de bases de datos, diseñadores y desarrolladores de
+    bases de datos en la construcción de un sistema de bases de datos.
+    \end{itemize}
+    El analista tiene que garantizar la utilidad de toda la información y los programas relacionados con los datos, incluido el sistema de administración de la base de datos, cualquier sistema de visualización de datos, la eficiencia del lenguaje de consulta de datos y el diccionario de datos. 
+
+    El diseñador crea una estructura de base de datos para hacer frente a las necesidades y expectativas de los futuros usuarios, también debe desarrollar formas de mostrar la información a los usuarios, además de mantener y adaptar bases de datos existentes siguiendo las necesidades cambiantes de los usuarios, o las cambiantes posibilidades en la programación. 
+
+    Los desarrolladores implementan el código de la base de datos para realizar una variedad de tareas, que incluyen: Extracción de datos de una base de datos para análisis de informes y crean, actualizan, extraen o eliminan datos según lo que requiera una aplicación e incluso diseñan nuevas bases de datos que satisfagan las necesidades de los usuarios o clientes, en un formato eficiente y preciso.
+    
+\begin{itemize}
+    \item[e.]Describe las relaciones que existen entre una base de datos y un Sistema Manejador de Bases de Datos.
+    \end{itemize}
+     
+     Respuesta
+    
+\begin{itemize}
+    \item[f.]Entrevista a algún usuario de sistemas de bases de datos, ¿qué características de SMBD encuentran más útiles y por qué? ¿qué instalación(es) de SMBD encuentran más/menos complicada y por qué? ¿cuáles perciben estos usuarios que son las ventajas y desventajas de un SMBD?
+    \end{itemize}
+    
+    Respuesta
+    
+\begin{itemize}
+    \item[g.]Supón que deseas crear un sitio de videos similar a YouTube. Considera cada uno de los puntos enumerados en el documento “Purpose of Database Systems”, como desventajas de administrar los datos en un sistema de procesamiento de archivos. Discute la relevancia de cada uno de los puntos indicados con respecto al almacenamiento de datos de los videos: título, el usuario que lo subió, la fecha de carga, las etiquetas, qué usuarios lo vieron, cantidad de “Me gusta”, entre otros.
+    \end{itemize}
+    
+    Respuesta
+    
+\begin{itemize}
+    \item[h.]Indica las principales responsabilidades de un Sistema Manejador de Bases de Datos. Para cada responsabilidad, indica qué problemas que surgirían si la responsabilidad no se cumpliera. Justifica en cada caso tu respuesta.
+    \end{itemize}
+    
+    Respuesta
+    
+\begin{itemize}
+    \item[i.]Asumiendo que una base de datos es un lugar donde se almacenan datos de forma sistemática y que la información se obtiene al consultar los datos entonces, un diccionario puede considerarse como una base de datos. Imagina que vas a buscar el significado de la palabra Luminiscencia, indica cómo efectuarías la búsqueda y los problemas que enfrentarías con:
+    \begin{enumerate}
+        \item Un diccionario con palabras desordenadas.
+        \item Un diccionario con palabras ordenadas, pero sin índice.
+        \item Un diccionario con palabras ordenadas y con índice.
+    \end{enumerate}
+    \end{itemize}
+    
+    Respuesta
+    
+\begin{itemize}
+    \item[j.]Investiga por qué surgieron los sistemas NoSQL en la década de 2000 y compara a través de una tabla sus características vs. los sistemas de bases de datos tradicionales.
+    \end{itemize}
+    Gigantes de Internet como Facebook, Google, Amazon vieron aumentos repentinos en el tráfico y los datos. Las bases de datos tradicionales no podían escalar bien, además de que esto es una tarea costosa y que requiere mucho tiempo. Los desarrolladores eran el costo para la empresa en lugar del almacenamiento. 
+ 
+   A fines de la década de 2000, surgieron las bases de datos NoSQL donde se cambiaron los modelos de datos complejos y difíciles de administrar para evitar la duplicación de datos. 
+   Las bases de datos NoSQL lograron disminuir los costos de almacenamiento y  los costos de los desarrolladores. Optimizando las actividades diarias de gestión de datos.
+
+   Debido a la caída de los precios del almacenamiento de datos, aumentó la demanda de almacenamiento y consulta. Los datos venían desde datos estructurados y semiestructurados hasta datos polimórficos. Ahí es donde las bases de datos NoSQL manejaron todas las demandas de almacenamiento de datos no estructurados. Ayudando así a los desarrolladores a almacenar datos y proporcionándoles una mayor flexibilidad.
+   
+     \color{darkgray}
+\begin{table}[H]
+    \centering
+        \begin{tabular}{|p{6cm} | p{6cm} |}        
+        \hline
+        \textbf{Bases de datos Tradicionales} & \textbf{NoSQL} \\
+        \hline
+        Las bases de datos tradicionales están basadas en tablas en forma de filas y columnas y deben adherirse estrictamente a las definiciones de esquema estándar. & Las bases de datos NoSQL pueden basarse en documentos, pares clave-valor, gráficos o columnas y no tienen que ceñirse a definiciones de esquema estándar. \\
+        \hline
+        Lenguaje de consulta estructurado & Tienen el esquema dinámico para datos no estructurados. Los datos se pueden almacenar de forma flexible sin tener una estructura predefinida.\\ 
+        \hline 
+        Costos reducidos de entrada, almacenamiento y recuperación de datos. & Los daños a la base de datos afectan prácticamente a todos los programas de aplicaciones. \\
+        \hline
+        Costoso de escalar. & Las bases de datos NoSQL son escalables horizontalmente. Esto significa que al fragmentar o agregar varios servidores a esta base de datos, puede manejar un mayor tráfico. \\
+        \hline
+        Agregar nuevos datos en la base de datos tradicionales requiere que se realicen algunos cambios, como el relleno de datos, la alteración de esquemas. & Más barato de escalar en comparación con las bases de datos tradicionales.\\
+        \hline
+        & Los nuevos datos se pueden insertar fácilmente en las bases de datos NoSQL, ya que no requiere ningún paso previo.\\
+        \hline
+        \end{tabular}
+\end{table}
+     
+     
+\item Lectura.
+\end{enumerate}
+\begin{itemize}
+    \item[a.]Leer el artículo Data’s Credibility Problem y realizar un resumen del documento, destacando los puntos que a su consideración sean los más relevantes (no más de una cuartilla).
+    \end{itemize}
+    Los problemas de calidad de datos es un tópico que afectan a todos los departamentos, industrias, niveles y tipos de información.
+
+Los estudios muestran que los trabajadores de conocimiento pierden hasta el 50\% del tiempo buscando datos, identificando, corrigiendo errores y buscando fuentes de confirmación para datos en los que no confían. Todo esto  nos lleva al lema "basura que entra, basura que sale". 
+
+Existen 2 momentos importantes en la vida de los datos:
+\begin{enumerate}
+    \item El momento en que se crean.
+    \item El momento en que se usan.
+\end{enumerate}
+	
+La calidad de datos se fija en el momento de la creación, pero en realidad no juzgamos esa calidad hasta el momento de su uso. 
+
+ La solución no es una mejor tecnología: es establecer una mejor comunicación entre los creadores de datos y los usuarios "clientes" de datos, asegurando que estos sepan cómo se usaran los datos para que así puedan identificar las causas fundamentales de los errores y encontrar formas de mejorar la calidad en el futuro. 
+
+En lugar de un esfuerzo masivo para limpiar los datos incorrectos existentes las empresas deberán centrarse en mejorar la forma en que se crean los nuevos datos. Ya que la forma en que se crean nuevos datos, se deben identificar y eliminar las causas fundamentales del error. Una vez hecho eso, se requiere de una limpieza limitada, pero no una limpieza continua. Con la observación de que pongan la responsabilidad de los datos en manos de los gerentes en línea ya que los creadores de datos no están vinculados organizacionalmente a los usuarios de datos. 
+
+Muchos de estos problemas de calidad de datos se dan en los metadatos "datos sobre datos". Los metadatos de alta calidad facilitan que las personas encuentren los datos que necesitan, combinen información y saquen las conclusiones apropiadas, por otro lado los errores en los metadatos pueden tener un gran impacto. 
+
+Las barreras reales para mejorar la calidad de datos son algunos gerentes que se niegan a admitir que sus datos no son lo suficientemente buenos y otros simplemente no saben cómo arreglar los datos de mala calidad.
+
+Sin duda el primer avance ocurre cuando un gerente en algún lugar de la organización  (posible alto ejecutivo), se cansa y decide iniciar un programa de datos para así mejorarlos.
+
+En conclusión superar este estancamiento requiere compromiso de la alta dirección ya que como dice Joseph Juran "El liderazgo de alta calidad no se puede delegar".
+
+\begin{itemize}
+    \item[b.]Leer el artículo Data’s Credibility Problem y realizar un resumen del documento, destacando los puntos que a su consideración sean los más relevantes (no más de una cuartilla).
+\end{itemize}
+\begin{itemize}
+    \item[*] Deberás indicar cuál es el objetivo que quiso plantear el autor: qué intenta decir, de qué intenta persuadirnos y/o convencernos, ¿cómo se relaciona con la materia de Fundamentos de Bases de Datos?
+    \item[*] Deberán indicar cuál es la temática central del artículo y se deben señalar el tema o los temas laterales que desarrolla el mismo y cómo estos tienen relación con tú práctica profesional.
+    \item[*] Consideraciones personales: deben indicar una postura ante las ideas planteadas en el artículo, proporcionar argumentos a favor o en contra (propios).
+\end{itemize}
+
+    
+\end{document}
