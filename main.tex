@@ -105,9 +105,11 @@ Los esquemas externos proporcionan independencia de datos lógicos, mientras que
 \begin{itemize}
     \item[e.]Describe las relaciones que existen entre una base de datos y un Sistema Manejador de Bases de Datos.
     \end{itemize}
-     
-     Respuesta
-    
+Apartir de la base de datos, el Sistema Manejador de Bases de Datos ó DBMS por sus siglas permite gestionar cómo se organiza y optimiza la información, es decir, es una \textbf{interfaz} entre el usuario y la base de datos. En esta, debe haber coherencia entre todos los datos de la base de datos y corrección y exactitud de la información contenida en la misma. \\
+Los DBMS soportan un modelo de datos \textbf{relacional}, es decir, consiste en en una colección de relaciones, que contienen atributos de un tipo específico, lo cual en una base de datos puede modelarse mediante el \textbf{modelo entidad-relación}\\
+Por esto mismo, un DBMS permite una supervisión y control mucho más \textbf{sencilla} de las bases de datos, ya que se pueden
+ representar relaciones complejas entre datos y otros aspectos relacionados con la seguridad y validez de los datos. \\
+ 
 \begin{itemize}
     \item[f.]Entrevista a algún usuario de sistemas de bases de datos, ¿qué características de SMBD encuentran más útiles y por qué? ¿qué instalación(es) de SMBD encuentran más/menos complicada y por qué? ¿cuáles perciben estos usuarios que son las ventajas y desventajas de un SMBD?
     \end{itemize}
@@ -123,9 +125,14 @@ Los esquemas externos proporcionan independencia de datos lógicos, mientras que
 \begin{itemize}
     \item[h.]Indica las principales responsabilidades de un Sistema Manejador de Bases de Datos. Para cada responsabilidad, indica qué problemas que surgirían si la responsabilidad no se cumpliera. Justifica en cada caso tu respuesta.
     \end{itemize}
-    
-    Respuesta
-    
+\begin{enumerate}
+\item \textbf{Define la base de datos-} Especifica los tipos y estructura que tendrán los datos. Si esto no se cumpliera, habría un problema de modelación en la base de datos, y por lo tanto no habría relación ni correctez.
+\item \textbf{Construir una base de datos:}-Por medio de un algoritmo, dados algún tipo de datos, los guarda en un medio controlado. Al igual que el caso anterior, pueden ocurrir problemas de relación entre los elementos de la base de datos en caso de que no se construya de forma correcta.
+\item \textbf{Manipular la base de datos-} Actualizar la base de datos, realizar consultas. Si ocurre un problema en la actualización de la base de datos, puede que datos se pierdan, es decir, no será \textbf{consistente} ni \textbf{Íntegra}
+\item \textbf{Seguridad}-Debe garantizar que se restringe la cantidad de información a los usuarios. Si esta responsabilidad fallara, la base de datos quedaría expuesta, pudiendo filtrar información priviliegiada a personas malintencionadas
+\textbf{Respaldo y recuperación-} Estas deben proporcionar una forma eficiente de realizar copias de respaldo de la información almacenada en ellos, asegurando que se pueden restaurar datos a partir de estas copias. Si no se generan copias, se puede perder información muy valiosa que será muy costoso volver a modelar si es una base de datos grande.
+\textbf{Control de la concurrencia- }Lo más habitual es que sean muchas las personas que acceden a una base de datos, bien para recuperar información, bien para almacenarla. Si esto no se hace de forma correcta, pueden ocurrir inconsistencias en nuestra base de datos.
+\end{enumerate}    
 \begin{itemize}
     \item[i.]Asumiendo que una base de datos es un lugar donde se almacenan datos de forma sistemática y que la información se obtiene al consultar los datos entonces, un diccionario puede considerarse como una base de datos. Imagina que vas a buscar el significado de la palabra Luminiscencia, indica cómo efectuarías la búsqueda y los problemas que enfrentarías con:
     \begin{enumerate}
