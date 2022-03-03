@@ -141,9 +141,14 @@ Por esto mismo, un DBMS permite una supervisión y control mucho más \textbf{se
         \item Un diccionario con palabras ordenadas y con índice.
     \end{enumerate}
     \end{itemize}
-    
-    Respuesta
-    
+\begin{itemize}
+
+\item[a)] \textit{Un diccionario con palabras desordenadas}- Al querer buscar la palabra en este diccionario, no habría una forma específica de encontrarla. Lo único que podríamos hacer, es ir leyendo todas las palabras en todas las hojas del diccionario hasta dar con la palabra. El problema de este diccionario es que al haber tantas palabras en un diccionario, la busqueda será un proceso largo y muy tardado, y a la mínima falta de concentración podemos pasar de largo la palabra y nunca encontrarla.\\
+\item[b)] \textit{Un diccionario con palabras ordenadas, pero sin índices}- Para este diccionario, podríamos recorrer algunas hojas de forma \textbf{arbitraria} para irnos acercando a las palabras con letra $L$. Cuando lleguemos a este índice, empezamos a revisar ahora las palabras que empiecen con $Lu$, y así hasta llegar a la palabra completa.\\
+\item[c)] \textit{Un diccionario con palabras ordenadas e índices-} Para este diccionario la búsqueda es muy sencilla, sólo buscamos el índice $L$, y después buscamos las palabras que empiecen con $Lu$, de esta forma encontraremos la palabra de forma rápida. Esta es la forma más cómoda y sencilla de encontrar una palabra en el diccionario.
+\end{itemize}
+
+
 \begin{itemize}
     \item[j.]Investiga por qué surgieron los sistemas NoSQL en la década de 2000 y compara a través de una tabla sus características vs. los sistemas de bases de datos tradicionales.
     \end{itemize}
