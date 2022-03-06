@@ -1,2 +1,2 @@
 # FundamentosBasesDeDatos
-Tareas de la Materia Fundamento de Bases de Datos
+Tareas de la Materia Fundamentos de Bases de Datos
