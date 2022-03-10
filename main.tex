@@ -110,11 +110,54 @@ Los SMBD soportan un modelo de datos \textbf{relacional}, es decir, consiste en 
 Por esto mismo, un SMBD permite una supervisión y control mucho más \textbf{sencilla} de las bases de datos, ya que se pueden
  representar relaciones complejas entre datos y otros aspectos relacionados con la seguridad y validez de los datos. \\
  
+ 
+ 
 \begin{itemize}
     \item[f.]Entrevista a algún usuario de sistemas de bases de datos, ¿qué características de SMBD encuentran más útiles y por qué? ¿qué instalación(es) de SMBD encuentran más/menos complicada y por qué? ¿cuáles perciben estos usuarios que son las ventajas y desventajas de un SMBD?
     \end{itemize}
     
     Respuesta
+    \begin{itemize}
+        \item \textbf{¿qué características de SMBD encuentran más útiles y por qué?}\\
+        
+        \begin{itemize}
+            \item \textbf{La minimización de la redundancia/duplicación de datos} :
+            Ya que esto permite que la información se mantiene concisa y solo aparece una vez para evitar la imprevisibilidad de los datos \\
+            
+            \item \textbf{Se mantiene la integridad de los datos:}
+            Esta caracteristca permite evitar la corrupción y falla de la base de datos y asegura que se mantenga la integridad de los datos.
+            
+        \end{itemize}
+        
+        \item \textbf{ ¿qué instalación(es) de SMBD encuentran más/menos complicada y por qué?}
+        \begin{enumerate}
+            \item \textbf{Más fácil}
+            PostgreSQL, nunca tuve problemas en instalarla tanto en Linux como Windows, es fácil ya que hay bastante documentación y videos sobre como hacer la instalación.
+            \item \textbf{Más complicada}
+            MySQL, tanto en Linux como en Windows, me salía un error de que no podía conectar con la base de datos, en general los errores más pesados y más comunes son de ese tipo, los cuales a veces se deben a los requerimientos del sistema.
+            
+            Un ejemplo de estos errores es:
+            \textbf{ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)}
+        \end{enumerate}
+        
+        \item \textbf{¿cuáles perciben estos usuarios que son las ventajas y desventajas de un SMBD?:}
+        \begin{enumerate}
+            \item \textbf{Ventajas}
+            \begin{itemize}
+                \item La seguridad de los datos.
+                \item La inconsistencia de datos se minimiza.
+                \item El acceso a los datos.
+            \end{itemize}
+            \item \textbf{Desventajas}
+            \begin{itemize}
+                \item La commplejidad de la gestión de un SMBD.
+                \item Los costos de manterner trabajando y actualizando un SMBD.
+                
+            \end{itemize}
+        \end{enumerate}
+    \end{itemize}
+    
+
     
 \begin{itemize}
     \item[g.]Supón que deseas crear un sitio de videos similar a YouTube. Considera cada uno de los puntos enumerados en el documento “Purpose of Database Systems”, como desventajas de administrar los datos en un sistema de procesamiento de archivos. Discute la relevancia de cada uno de los puntos indicados con respecto al almacenamiento de datos de los videos: título, el usuario que lo subió, la fecha de carga, las etiquetas, qué usuarios lo vieron, cantidad de “Me gusta”, entre otros.
@@ -238,4 +281,30 @@ En este artículo, se trata de evidenciar un problema que es muy común cuando s
 Esto se puede arreglar sin necesidad de invertir en nuevas tecnologías ni nada por el estilo, basta con que los creadores de los sistemas de recolección se comuniquen con aquellos que recolectan datos. Usualmente, cuando suceden problemas en la calidad de la recolección, se le asigna la responsabilidad a IT de solucionarlo, pero usualmente esto no funciona, ya que la calidad de los datos es solucionada a la hora de que se crean, es por esto que la comunicación entre recolectores y personal de IT puede solucionar este problema.\\
 De este artículo, debemos entender que la \textbf{comunicación} entre recolectores y personal de IT debe de ser prioritario para tener una calidad en los datos en una empresa. Se da el ejemplo de una empresa millonaria, \textit{Chevron}, donde se dieron cuenta que había impresición en sus datos. Dada esta impresición, contrataron a expertos en manejo de datos para solucionar su problema, y un punto muy importante a recalcar es que antes que esforzarse en corregir los datos imprecisos, las compañías deberían mantenerse concentradas en mejorar la forma en que crean nuevos datos, de esta manera lograron "limpiar" los datos y tener calidad en sus recolecciones en menos de un año.\\
 Desde mi punto de vista, el autor tiene toda la razón en su forma de solucionar estos problemas. Debemos de tener una mayor comunicación entre áreas de una empresa para evitar impresiciones.
+\\
+
+\begin{center}
+\textbf{David Hernández Uriostegui}
+\end{center}
+\\
+
+El propsito inicial de este árticilo tiene como objetivo darnos a conocer y entender las repercuciones que pueden llegar a suceder por el uso y/o creación de datos de baja calidad, y que este tipo de problemas no son solamente de un area en especifico, si no que en general el uso de este tipo  de datos impacta de diferentes maneras, pero negativamente.
+
+Adicionalemente como se nos mencionó en clase, las personas que trabajan en obtener gastan la mitad de su tiempo laboral limpiando y buscando datos para evitar hacer analisis o labores de baja calidad.
+\\
+
+Inmediatamente se nos proporciona un ejemplo de como es que los datos dentro de una empresa se vuelven de baja calidad, siendo afectados no solamente el equipo que recavó los datosm si no que todos los equipos que hacen uso de estos datos se ven afectados provocando que surgan nuevos inconvenientes como el gasto de capital más elevado de lo que debería haber sido, este tipo de cosas se nos han mencionado desde las primeras clases que para poder evitar/solucionar la creación de datos de baja calidad es fundamental la comunicación entre todos los involucrados.
+\\
+
+El resto de la lectura se abordan el problema de como resolver el problema de la creación y limpieza de datos de baja calidad, y el primer para esto es haya comunicación entre los usuarios de datos y los creadores de datos, para que de esta manera se puedan fijar nuevos objetivos sobre qué tipo de datos crear y como organizarlos.\\
+
+El siguiente paso es \textit{"limpiar" } los datos de mala calidad que ya se tiene guardados, pero en realidad el limpiar estos datos no va a generar un cambio inovador y beneficioso para la organización, lo que se debe hacer en este caso para no gastar tiempo y enormes cantidades de dinero, es diseñar la estructura de los nuevos datos para que de esta forma la nueva base de datos esté siendo actualizada continuamente y que las limpiezas que deban hacerse sean limitadas, este enfoque es mucho mejor tanto como en cuestión ecónomica como técnologicamente.
+\\
+
+Y este tipo de enfoque se rectifica mostrandonos un ejemplo dónde una empresa decidió seguir esta orientación, y al hacerlo la empresa recibió bastantes beneficios, y de hecho el autor mismo menciona que el ha visto en diversas ocasiones que al seguir esta perspectiva para atacar el problema de calidad de datos siempre muestra resuldados similares (mejoramiento de la calidad de datos).
+\\
+
+Personalmente creo que los temas abordados por el árticulo son las principales problematicas al lidiar con bases de datos, desde su creación y planificación hasta la limpieza de estas, cada uno de estos aspectos tiene sus problematicas y repercusiones.\\
+
+Yo concuerdo con todo lo mencionado en el árticulo, considero que para poder generar datos que seen de confianza y calidad debe haber comunicación constante con los usuarios del producto en el cuál se está trabajando para que se pueda tener bases de datos estructuradas de acuerdo a las princpales necesidades y que permitan que la limpieza de estas sea limitada, y en caso que se deba hacer una limpieza profunda de la base datos, lo mejor será volver a restructurar la manera en que se crean los datos para evitar costos elevados y poder trabajar de manera más rapida y eficiente con datos de calidad buena.
 \end{document}
